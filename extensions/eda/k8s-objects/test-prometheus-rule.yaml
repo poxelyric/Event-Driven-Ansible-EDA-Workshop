@@ -12,7 +12,6 @@ spec:
       annotations:
         summary: event driven poc
       expr: |
-        vector(1)
-      for: 10s
+        vector(time()%120 ) < 60
       labels:
         severity: custom
