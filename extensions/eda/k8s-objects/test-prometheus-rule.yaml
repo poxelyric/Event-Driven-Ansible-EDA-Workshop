@@ -11,7 +11,7 @@ spec:
     - alert: NodeHealthCheckFailed
       annotations:
         summary: event driven poc
-      expr: |
-        vector(time()%120 ) < 60
+      expr: >-
+        absent(nonexsist{instance="ip-10-0-61-27.us-east-2.compute.internal"})*time()%120  < 60
       labels:
         severity: custom
